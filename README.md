@@ -1,1 +1,1 @@
-gitpages link: https://brochachox.github.io/linkedtech/
+https://brochachox.github.io/tic-tac-toe/
