@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TicTacToe</title>
+</head>
+
+<body>
+    <div id="page">
+        <div class="settings">
+            <img class="settings-icon rotate" src="svg/settings.svg" alt="">
+        </div>
+        <div class="settings-overlay">
+            <select class="field-size-settings" name="size">
+                <option value="3">3x3 grid</option>
+                <option value="4">4x4 grid</option>
+                <option value="5">5x5 grid</option>
+            </select>
+
+        </div>
+        <div class="container">
+            <p class="text-output"></p>
+            <div class="field">
+
+            </div>
+            <button class="reset invisisble" value="reset">Reset</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="animations.js"></script>
+
+</html>

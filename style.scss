@@ -1,0 +1,176 @@
+$FieldMinSize: 190px;
+$FieldMaxSize: 350;
+$ScreenMaxSize: 1920;
+$fieldsize: calc(#{$FieldMinSize} + #{$FieldMaxSize} * (100vw / #{$ScreenMaxSize}));
+$lineWidth: 10px;
+$gapSize: $lineWidth + 2;
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #34495e;
+}
+#page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.cross {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: $lineWidth;
+        transform: rotate(45deg);
+        background-color: white;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: $lineWidth;
+        transform: rotate(-45deg);
+        background-color: white;
+    }
+}
+.zero {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        border-radius: 50%;
+        border: $lineWidth solid white;
+    }
+}
+.container {
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $fieldsize;
+}
+.field {
+    width: inherit;
+    height: $fieldsize;
+    display: grid;
+    //background-color: #2c3e50;
+    color: #fff;
+    grid-column-gap: $gapSize;
+    grid-row-gap: $gapSize;
+}
+.field-3-grids {
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+.field-4-grids {
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+}
+.field-5-grids {
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+}
+.cell {
+    cursor: pointer;
+    // background-color: #34495e;
+    background-color: #2c3e50;
+    border-radius: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background-color: #222f3b;
+    }
+}
+.text-output {
+    box-sizing: border-box;
+    width: 100%;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.reset {
+    cursor: pointer;
+    border: none;
+
+    text-decoration: none;
+
+    font-family: sans-serif;
+    opacity: 1;
+    margin-top: 30px;
+    width: 70%;
+    padding: 10px 0px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+    font-size: 2em;
+    background-color: #2c3e50;
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: #222f3b;
+    }
+}
+.invisisble {
+    transform: scale(0);
+    opacity: 0;
+}
+.settings {
+    z-index: 101;
+    cursor: pointer;
+    // background-color: #2c3e50;
+    padding: 10px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    .settings-icon {
+        width: 100%;
+        object-fit: cover;
+        transition: transform 1s;
+    }
+    & .rotate {
+    }
+}
+.settings-icons-rotate {
+    transform: rotate(180deg);
+}
+.settings-overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #2c3e50;
+    transform: translateX(-100%);
+    transition: transform 1s;
+    display: flex;
+}
+.settings-overlay-visible {
+    transform: translateX(0);
+}
+.field-size-settings {
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    margin: 10vh auto;
+    background-color: #222f3b;
+    color: white;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    & option {
+        outline: none;
+        border: none;
+    }
+}
