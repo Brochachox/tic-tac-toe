@@ -1,2 +1,1 @@
-# tic-tac-toe
-tic-tac-toe for gitpages
+gitpages link: https://brochachox.github.io/linkedtech/
